@@ -26,3 +26,7 @@ def test_multiple_negative_numbers():
     with pytest.raises(ValueError) as exc_info:
         add("2,-4,3,-5")
     assert str(exc_info.value) == "negative numbers not allowed: -4, -5"
+
+def test_ignore_numbers_over_1000():
+    assert add("2,1001") == 2
+    assert add("1000,2") == 1002

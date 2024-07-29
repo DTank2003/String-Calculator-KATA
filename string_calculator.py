@@ -15,4 +15,4 @@ def add(numbers):
     if negatives:
         raise ValueError(f"negative numbers not allowed: {', '.join(map(str, negatives))}")
     
-    return sum(nums)
+    return sum(n for n in nums if n <= 1000)
