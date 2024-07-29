@@ -30,3 +30,6 @@ def test_multiple_negative_numbers():
 def test_ignore_numbers_over_1000():
     assert add("2,1001") == 2
     assert add("1000,2") == 1002
+
+def test_multiple_delimiters():
+    assert add("//[*][%]\n1*2%3") == 6
