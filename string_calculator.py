@@ -2,4 +2,11 @@
 def add(numbers):
     if numbers == "":
         return 0
-    return sum(int(n) for n in numbers.replace("\n", ",").split(","))
+    
+    if numbers.startswith("//"):
+        delimiter, numbers = numbers.split("\n", 1)
+        delimiter = delimiter[2:]
+    else:
+        delimiter = ","
+
+    return sum(int(n) for n in numbers.replace("\n", delimiter).split(delimiter))
